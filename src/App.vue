@@ -1,0 +1,54 @@
+<template>
+  <div id="app">
+    <NavBar></NavBar>
+	<div id="app-content" class="container is-fluid">
+		<div class="columns">
+			<div class="column">
+				<p>Content</p>
+			</div>
+		</div>
+	</div>
+	<FrameFooter></FrameFooter>
+  </div>
+</template>
+
+<script>
+import NavBar from './components/NavBar.vue'
+import FrameFooter from './components/FrameFooter.vue'
+
+export default {
+  name: 'App',
+  components: {
+    NavBar,
+	FrameFooter
+  }
+}
+</script>
+
+<style>
+	@import "../node_modules/@mdi/font/css/materialdesignicons.min.css";
+	@import "../node_modules/bulma/css/bulma.min.css";
+	@import "../node_modules/bulma-badge/dist/css/bulma-badge.min.css";
+	@import "../node_modules/buefy/dist/buefy.css";
+	
+	html {
+		height: 100%;
+		overflow-y: auto;
+	}
+	
+	body {
+		height: 100%;
+	}
+	
+	#app {
+		height: 100%;
+	}
+	
+	
+	#app-content {
+		height: calc(100% - 80px);
+		margin: 0;
+		padding-left: 15px;
+		padding-right: 15px;
+	}
+</style>
