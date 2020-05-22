@@ -39,9 +39,6 @@
 		min-height: 30px;
 		border-top: 1px solid lightgrey;
 	}
-	.navbar-brand {
-		min-height: 30px;
-	}
 	p {
 		font-size: 12px;
 	}

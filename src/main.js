@@ -8,6 +8,8 @@ Vue.use(Buefy, {
 	defaultContainerElement: '#app-content'
 });
 
+require('./styles/global.scss');
+
 Vue.config.productionTip = false
 
 new Vue({

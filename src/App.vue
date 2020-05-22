@@ -27,13 +27,11 @@ export default {
 
 <style>
 	@import "../node_modules/@mdi/font/css/materialdesignicons.min.css";
-	@import "../node_modules/bulma/css/bulma.min.css";
 	@import "../node_modules/bulma-badge/dist/css/bulma-badge.min.css";
-	@import "../node_modules/buefy/dist/buefy.css";
 	
 	html {
 		height: 100%;
-		overflow-y: auto;
+		overflow-y: auto !important;
 	}
 	
 	body {

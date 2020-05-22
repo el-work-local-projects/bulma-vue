@@ -1,16 +1,17 @@
 <template>
-	<nav class="navbar is-info" role="navigation" aria-label="nain navigation">
+	<nav class="navbar is-primary" role="navigation" aria-label="nain navigation">
 		<div class="navbar-brand">
 			<a class="navbar-item" href="#">
 				<i class="mdi mdi-coffee"></i> EMS CAFE
 			</a>
-			<a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navItems">
+			<a role="button" class="navbar-burger burger" :class="{'is-active': navOpen}" @click="navOpen = !navOpen" 
+							aria-label="menu" aria-expanded="false" data-target="navItems">
 				<span aria-hidden="true"></span>
 				<span aria-hidden="true"></span>
 				<span aria-hidden="true"></span>
 			</a>
 		</div>
-		<div id="navItems" class="navbar-menu">
+		<div id="navItems" class="navbar-menu" :class="{'is-active': navOpen}">
 			<div class="navbar-start">
 				<div class="navbar-item has-dropdown is-hoverable">
 					<a class="navbar-link">Applications</a>
@@ -31,8 +32,8 @@
 				</div>
 			</div>
 			<div class="navbar-end">
-				<a class="navbar-item">
-					<i class="mdi mdi-message has-badge-rounded has-badge-bottom" data-badge="5"></i>		
+				<a class="navbar-item" type="button" @click="openMessageModal()">
+					<i class="mdi mdi-message has-badge-rounded has-badge-bottom" data-badge="5"></i>			
 				</a>
 				<div class="navbar-item has-dropdown is-hoverable">
 					<a class="navbar-link">
@@ -59,6 +60,8 @@
 </template>
 
 <script>
+	import FrameMessageViewer from './FrameMessageViewer.vue'
+	
 	export default {
 		name: 'NavBar',
 		data: () => {
@@ -72,7 +75,19 @@
 					'OASIS Administrator',
 					'Shift Log'
 				],
-				samewindow: false
+				samewindow: false,
+				navOpen: false,
+				showMessageModal: false
+			}
+		},
+		methods: {
+			openMessageModal() {
+				this.$buefy.modal.open({
+					parent: this,
+					component: FrameMessageViewer,
+					hasModalCard: true,
+					trapFocus: true
+				});
 			}
 		}
 	}
@@ -88,5 +103,6 @@
 	}
 	[data-badge]::after {
 		box-shadow: none;
+		z-index: 1;
 	}
 </style>
