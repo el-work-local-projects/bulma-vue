@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <NavBar></NavBar>
-	<div id="app-content" class="container is-fluid">
+	<div id="app-content" class="is-marginless">
 		<div class="columns">
 			<div class="column">
 				<p>Content</p>
@@ -25,8 +25,9 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
 	@import "../node_modules/@mdi/font/css/materialdesignicons.min.css";
+	@import "@/styles/global.scss";
 	@import "../node_modules/bulma-badge/dist/css/bulma-badge.min.css";
 	
 	html {
@@ -45,7 +46,6 @@ export default {
 	
 	#app-content {
 		height: calc(100% - 80px);
-		margin: 0;
 		padding-left: 15px;
 		padding-right: 15px;
 	}

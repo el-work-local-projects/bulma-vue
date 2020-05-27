@@ -4,6 +4,8 @@ $primary: #258ED5;
 
 @import "~bulma/sass/utilities/_all";
 
+$body-background-color: $grey-lightest;
+
 $navbar-breakpoint: $tablet;
 
 @import '~bulma/bulma';
