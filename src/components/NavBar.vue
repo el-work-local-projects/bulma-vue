@@ -22,19 +22,30 @@
 				<div class="navbar-item">
 					<div class="field is-grouped">
 						<p class="control">
-							<i class="mdi mdi-tab-plus"></i>
+							<b-tooltip label="New Tab" type="is-dark" position="is-bottom">
+								<i class="mdi mdi-tab-plus"></i>
+							</b-tooltip>
 						</p>
 						<b-switch v-model="samewindow" type="is-warning" size="is-small"></b-switch>
 						<p class="control">
-							<i class="mdi mdi-tab-unselected"></i>
+							<b-tooltip label="Same Tab" type="is-dark" position="is-bottom">
+								<i class="mdi mdi-tab-unselected"></i>
+							</b-tooltip>
 						</p>
 					</div>
 				</div>
 			</div>
 			<div class="navbar-end">
-				<a class="navbar-item" type="button" @click="openMessageModal()">
-					<i class="mdi mdi-message has-badge-rounded has-badge-bottom" data-badge="5"></i>			
-				</a>
+				<b-tooltip label="Messages" type="is-dark" position="is-bottom">
+					<!-- I had to rewrap this to get the right styles applied to the link again after setting the tooltip -->
+					<div class="navbar is-primary">
+						<div class="navbar-end">
+						<a class="navbar-item" type="button" @click="openMessageModal()">
+							<i class="mdi mdi-message has-badge-rounded has-badge-bottom" data-badge="5"></i>			
+						</a>
+						</div>
+					</div>
+				</b-tooltip>
 				<div class="navbar-item has-dropdown is-hoverable">
 					<a class="navbar-link">
 						<i class="mdi mdi-help-circle"></i>
@@ -94,7 +105,7 @@
 </script>
 
 <style scoped>
-	nav {
+	.navbar {
 		height: 50px;
 		min-height: 50px;
 	}
