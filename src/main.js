@@ -1,15 +1,18 @@
-import Vue from 'vue'
-import Buefy from 'buefy'
+import Vue from 'vue';
+import App from './App.vue';
+import router from './router';
 
-import App from './App.vue'
+import Buefy from 'buefy';
+
+Vue.config.productionTip = false;
 
 Vue.use(Buefy, {
 	defaultIconPack: 'mdi',
 	defaultContainerElement: '#app-content'
 });
 
-Vue.config.productionTip = false
 
 new Vue({
   render: h => h(App),
+  router
 }).$mount('#app')

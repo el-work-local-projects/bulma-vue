@@ -7,6 +7,7 @@ $primary: #258ED5;
 $body-background-color: $grey-lightest;
 
 $navbar-breakpoint: $tablet;
+$gap: 15px;
 
 @import '~bulma/bulma';
 @import "~buefy/src/scss/buefy";
